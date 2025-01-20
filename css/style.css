@@ -3,7 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     --banner-width: 500px;
-    --banner-height: calc(calc(2792 / 1862) * var(--banner-width));
+    --banner-ratio: calc(2792 / 1862);
     --banner-background: rgb(0,0,0,0.5);
 }
 
@@ -19,14 +19,15 @@ body {
 }
 
 /* ========= SIDE BANNER =========== */
+
 .banner-img {
-    width: var(--banner-width);
+    width: 100%;
     position: absolute;
 }
 
 .banner {
+    flex: 3;
     background: antiquewhite;
-    width: var(--banner-width);
     position: relative;
     display: inline-block;
 }
@@ -57,6 +58,18 @@ body {
 /* ===== FORM CONTENT ========*/
 .content {
     background: wheat;
-    flex: 1;
-    height: var(--banner-height);
+    flex: 5;
+    aspect-ratio: calc(5 / (3 * var(--banner-ratio)));
+}
+
+.top {
+    background-color: aquamarine;
+}
+
+.middle {
+    background-color: aqua;
+}
+
+.bottom {
+    background-color: aliceblue;
 }
