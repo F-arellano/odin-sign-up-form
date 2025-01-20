@@ -32,36 +32,70 @@
                     <div class="left">
                         <div>
                             <label for="first-name">FIRST NAME (*)</label>
-                            <input id="first-name" type="text">
+                            <input 
+                                id="first-name" 
+                                type="text" 
+                                placeholder="firstname secondname"
+                                pattern="[a-zA-z]*"
+                                required
+                            >
                         </div>
                         <div>
                             <label for="email">EMAIL (*)</label>
-                            <input id="email" type="email">
+                            <input 
+                                id="email" 
+                                type="email" 
+                                placeholder="example@domain.com" 
+                                required
+                            >
                         </div>
                         <div>
                             <label for="password">PASSWORD (*)</label>
-                            <input id="password" type="password">
+                            <input 
+                                id="password" 
+                                type="password" 
+                                placeholder=" " 
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,12}$"
+                                required
+                            >
                         </div>
                     </div>
                     <div class="right">
                         <div>
                             <label for="last-name">LAST NAME (*)</label>
-                            <input id="last-name" type="text">
+                            <input 
+                                id="last-name" 
+                                type="text" 
+                                placeholder="lastname" 
+                                pattern="[a-zA-z]*"
+                                required
+                            >
                         </div>
                         <div>
                             <label for="phone">PHONE NUMBER</label>
-                            <input id="phone" type="tel">
+                            <input 
+                                id="phone" 
+                                placeholder="+56*********" 
+                                type="tel"
+                                pattern="\+56\d{9}"
+                            >
                         </div>
                         <div>
                             <label for="password-confirm">CONFIRM PASSWORD (*)</label>
-                            <input id="password-confirm" type="password">
+                            <input 
+                                id="password-confirm" 
+                                type="password" 
+                                placeholder=" " 
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,12}$"
+                                required
+                            >
                         </div>
                     </div>
                 </div>
             </form>
         </div>
         <div class="bottom">
-            <input type="submit" form="sign-up" value="Update"/>
+            <input type="submit" form="sign-up" value="Create Account"/>
             <p>Already have an account? <a href="#">Log in</a></p>
         </div>
     </div>

@@ -12,6 +12,9 @@
     --label-color: #404752;
     --border-form-color: #E5E7EB;
     --border-form-invalid-color: red;
+    --button-color: #596D48;
+    --button-hover-color: #6d904b;
+    --button-clicked-color: #293221;
 }
 
 @font-face {
@@ -31,6 +34,16 @@ p {
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--font-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--button-color);
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 label {
@@ -56,9 +69,35 @@ input[type="tel"] {
 
     font-size: 1rem;
 
-    &:invalid {
+    &:invalid:not(:placeholder-shown):not(:focus) {
         border: 2px solid var(--border-form-invalid-color);
         margin: 0px;
+
+        &::after {
+            content: blabla;
+        }
+    }
+}
+
+input[type="submit"] {
+    background-color: var(--button-color);
+    padding: 15px 50px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    margin-bottom: 40px;
+
+    color: var(--content-background);
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px grey;
+
+    &:hover {
+        background-color: var(--button-hover-color);
+    }
+
+    &:active {
+        background-color: var(--button-hover-color);
+        border: 2px solid var(--button-clicked-color);
     }
 }
 
@@ -120,10 +159,13 @@ input[type="tel"] {
 }
 
 .middle {
+    z-index: 1;
     flex: 35;
     background-color: var(--form-background);
     height: 200px;
-    padding: 20px 50px;
+    padding: 30px 50px;
+    padding-bottom: 50px;
+    box-shadow: 5px 5px 10px grey;
 }
 
 .form-content {
@@ -131,16 +173,14 @@ input[type="tel"] {
     gap: 10%;
 }
 
-.left {
-    /* flex: 1; */
-}
-
-.right {
-    /* flex: 1; */
-}
-
 .bottom {
     flex: 25;
     background-color: var(--content-background);
     height: 300px;
+    padding: 30px 50px;
+
+    &>p {
+        font-size: 1rem;
+        font-weight: 300;
+    }
 }
