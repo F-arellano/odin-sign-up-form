@@ -5,6 +5,8 @@
     --banner-width: 500px;
     --banner-ratio: calc(2792 / 1862);
     --banner-background: rgb(0,0,0,0.5);
+    --content-background: #f9fafb;
+    --form-background: #ffffff;
 }
 
 @font-face {
@@ -16,6 +18,7 @@ body {
     display: flex;
     background: gray;
     justify-content: stretch;
+    font-family: roboto, sans-serif;
 }
 
 /* ========= SIDE BANNER =========== */
@@ -39,9 +42,11 @@ body {
     transform: translate( -50%, -50% );
     padding: 30px;
     text-align: center;
+
     color: white;
     font-family: logo-font, sans-serif;
     font-size: 3.0rem;
+
     background-color: var(--banner-background);
     width: 100%;
 }
@@ -60,16 +65,33 @@ body {
     background: wheat;
     flex: 5;
     aspect-ratio: calc(5 / (3 * var(--banner-ratio)));
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: stretch; */
 }
 
 .top {
-    background-color: aquamarine;
+    flex: 30;
+    background-color: var(--content-background);
+    height: 100px;
+    padding: 15% 0px 0px 50px;
 }
 
 .middle {
-    background-color: aqua;
+    flex: 25;
+    background-color: var(--form-background);
+    height: 200px;
 }
 
 .bottom {
-    background-color: aliceblue;
+    flex: 30;
+    background-color: var(--content-background);
+    height: 300px;
+}
+
+.top > p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
